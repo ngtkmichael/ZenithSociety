@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ZenithDataLib.Models.Zenith.Event>
+
+@{
+    ViewBag.Title = "Manage Events";
+}
+
+<h2>Manage Events</h2>
+
+<p>
+    @Html.ActionLink("Create A New Event", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Activity.ActivityDescription)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.EventFromDatetime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventToDatetime)
+        </th>*@
+        <th>Event Date</th>
+        <th>Event Time</th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activity.ActivityDescription)
+        </td>
+        <td>@item.EventFromDatetime.DayOfWeek @item.EventFromDatetime.ToString("MMMM") @item.EventFromDatetime.Day, @item.EventFromDatetime.Year</td>
+        <td>@item.EventFromDatetime.ToString("hh:mm tt") - @item.EventToDatetime.ToString("hh:mm tt")</td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.EventFromDatetime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventToDatetime)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventId })
+        </td>
+    </tr>
+}
+
+</table>

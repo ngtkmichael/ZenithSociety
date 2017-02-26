@@ -1,0 +1,10 @@
+﻿===================================================================================
+=================================== ApplicationDbConext ===========================
+===================================================================================
+
+Enable-Migrations -ContextProjectName ZenithDataLib -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity
+
+add-migration -ConfigurationTypeName ZenithWebSite.Migrations.Identity.Configuration "InitialIdentity"
+
+update-database -ConfigurationTypeName ZenithWebSite.Migrations.Identity.Configuration
+

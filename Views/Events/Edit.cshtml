@@ -1,0 +1,98 @@
+﻿@model ZenithDataLib.Models.Zenith.Event
+
+@{
+    ViewBag.Title = "Edit Event";
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <!-- jQuery UI CSS Reference -->
+    <link href="@Url.Content("~/Content/themes/base/jquery-ui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/base/jquery.timepicker.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/base/jquery.simple-dtpicker.css")" rel="stylesheet" />
+
+    <!-- Required jQuery and jQuery UI Javascript references -->
+    <script src="@Url.Content("~/Scripts/jquery-1.12.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.timepicker.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.simple-dtpicker.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            // This will make every element with the class "date-picker" into a DatePicker element
+            $('.date-picker').datepicker();
+        })
+
+        $(function () {
+            $('.time-picker').timepicker({ 'step': 15 });
+        })
+
+        $(function () {
+            $('.datetime-picker').appendDtpicker({ "firstDayOfWeek": 1, "minuteInterval": 15 });
+        })
+
+    </script>
+}
+
+<h2>Edit Event</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @*<h4>Event</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.EventId)
+        @Html.HiddenFor(model => model.CreationUsername)
+        @Html.HiddenFor(model => model.CreationDate)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ActivityId, "Activity Description", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ActivityId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ActivityId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventFromDatetime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => Model.EventFromDatetime, new { @Value = Model.EventFromDatetime.ToString("yyyy-MM-dd HH:mm"), @class = "datetime-picker" })
+                @Html.ValidationMessageFor(model => model.EventFromDatetime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventToDatetime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => Model.EventToDatetime, new { @Value = Model.EventToDatetime.ToString("yyyy-MM-dd HH:mm"), @class = "datetime-picker" })
+                @Html.ValidationMessageFor(model => model.EventToDatetime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive)
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

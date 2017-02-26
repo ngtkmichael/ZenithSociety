@@ -1,0 +1,26 @@
+﻿@model ZenithDataLib.Models.Zenith.Activity
+
+@{
+    ViewBag.Title = "Activity Details";
+}
+
+<h2>Activity Details</h2>
+
+<div>
+    @*<h4>Activity: @Model.ActivityId</ h4 >*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivityDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivityDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ActivityId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
