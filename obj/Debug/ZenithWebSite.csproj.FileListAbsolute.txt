@@ -40,7 +40,6 @@ D:\BCIT\ASP.NET MVC Web Application\Assignment 1\ZenithSociety\ZenithWebSite\bin
 D:\BCIT\ASP.NET MVC Web Application\Assignment 1\ZenithSociety\ZenithWebSite\bin\System.Web.WebPages.dll
 D:\BCIT\ASP.NET MVC Web Application\Assignment 1\ZenithSociety\ZenithWebSite\bin\System.Web.WebPages.Razor.dll
 D:\BCIT\ASP.NET MVC Web Application\Assignment 1\ZenithSociety\ZenithWebSite\bin\WebGrease.dll
-D:\BCIT\ASP.NET MVC Web Application\Assignment 1\ZenithSociety\ZenithWebSite\bin\ZenithDataLib.dll
 D:\BCIT\ASP.NET MVC Web Application\Assignment 1\ZenithSociety\ZenithWebSite\bin\ZenithDataLib.pdb
 D:\BCIT\ASP.NET MVC Web Application\Assignment 1\ZenithSociety\ZenithWebSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\BCIT\ASP.NET MVC Web Application\Assignment 1\ZenithSociety\ZenithWebSite\bin\System.Web.Helpers.xml
