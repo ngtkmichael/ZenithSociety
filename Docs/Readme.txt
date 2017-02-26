@@ -85,6 +85,7 @@ EventsController
 21. Deploy ZenithWebSite to Azure via GitHub.
 
 •	The URL of your assignment 1 deployment on Azure.
+http://zenithsocietyntmbcit.azurewebsites.net
 
 •	Any major challenges
 - Working with the jquery UI.

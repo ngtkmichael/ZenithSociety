@@ -58,7 +58,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EventFromDatetime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBox("EventFromDatetime", String.Format("{0:d}", DateTime.Now), new { @type = "date", @class = "datetime-picker" })
+                @Html.TextBoxFor(model => Model.EventFromDatetime, new { @Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm"), @class = "datetime-picker" })
+                @*@Html.TextBox("EventFromDatetime", String.Format("{0:d}", DateTime.Now), new { @type = "date", @class = "datetime-picker" })*@
                 @Html.ValidationMessageFor(model => model.EventFromDatetime, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,7 +67,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EventToDatetime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBox("EventToDatetime", String.Format("{0:d}", DateTime.Now), new { @type = "date", @class = "datetime-picker" })
+                @Html.TextBoxFor(model => Model.EventToDatetime, new { @Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm"), @class = "datetime-picker" })
+                @*@Html.TextBox("EventToDatetime", String.Format("{0:d}", DateTime.Now), new { @type = "date", @class = "datetime-picker" })*@
                 @Html.ValidationMessageFor(model => model.EventToDatetime, "", new { @class = "text-danger" })
             </div>
         </div>

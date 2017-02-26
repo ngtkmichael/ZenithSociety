@@ -181,6 +181,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Identity\201702210408147_InitialIdentity.cs" />
     <Compile Include="Migrations\Identity\201702210408147_InitialIdentity.Designer.cs">
       <DependentUpon>201702210408147_InitialIdentity.cs</DependentUpon>
